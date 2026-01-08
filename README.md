@@ -133,4 +133,3 @@ TaskTracker
 ## 👤 Author
 
 Built by **Dhanush Shettigar**  
-```

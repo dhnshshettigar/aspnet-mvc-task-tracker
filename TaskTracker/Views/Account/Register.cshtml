@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
+
+<h2>Register</h2>
+<form method="post">
+    <input type="text" name="Username" placeholder="UserName" /><br />
+    <input type="email" name="Email" placeholder="Email" /><br />
+    <input type="password" name="Password" placeholder="Password" /><br />
+    <button type="submit">Register</button>
+    <p>
+        Already have an account?
+        @Html.ActionLink("Login Here","Login", "Account")
+    </p>
+</form>
+

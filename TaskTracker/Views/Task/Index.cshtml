@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model List<TaskTracker.Models.TaskItem>
+
+<h2>My task</h2>
+<a href="/Task/Create">Add Task</a>
+<div style="text-align:right">
+    Welcome, @Session["UserName"] |
+    @Html.ActionLink("Logout", "Logout", "Account")
+</div>
+
+<hr />
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td>@(task.Title)</td>
+            <td>@(task.Description)</td>
+            <td>@(task.IsComplete? "Done" : "Pending")</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = task.TaskId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = task.TaskId },
+                    new { onclick = "return confirm('Delete this task?');" })
+            </td>
+
+        </tr>
+    }
+</table>
+

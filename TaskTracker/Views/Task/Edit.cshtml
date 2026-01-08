@@ -1,0 +1,18 @@
+﻿@model TaskTracker.Models.TaskItem
+
+<h2>Edit Task</h2>
+
+<form method="post">
+    <input type="hidden" name="TaskId" value="@Model.TaskId" />
+
+    <input type="text" name="Title" value="@Model.Title" /><br />
+
+    <textarea name="Description">@Model.Description</textarea><br />
+
+    <label>
+        <input type="checkbox" name="IsComplete" value="true" @(Model.IsComplete ? "checked" : "") />
+        Completed
+    </label><br />
+
+    <button type="submit">Update</button>
+</form>
